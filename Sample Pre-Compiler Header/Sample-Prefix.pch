@@ -1,0 +1,41 @@
+//
+// Prefix header for all source files of the 'Shelby.tv' target in the 'Shelby.tv' project
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+
+    /// Apple Frameworks
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+    /// Analytics
+    // Metric tools (e.g., Crashlytics, Flurry, Google, etc...)
+
+    /// Third Party Libraries
+    // Custom libraries (e.g., AFNetworking, MBProgressHUD, etc...)
+
+    /// Constants
+    #import "Constants.h"
+
+    /// Cateogories
+    #import "UIColor+ColorWithHexAndAlpha.h" // https://github.com/ArtSabintsev/UIColor-ColorWithHexAndAlpha
+    
+    /// Models
+    #import "AppDelegate.h"
+
+    /// Views
+    // Global Views (e.g., custom UIButton, custom Label, etc..)
+
+    /// Controllers
+    // Global Controllers (e.g., API Controller, Core Data Controller, etc...)
+
+
+#endif
+
+#ifdef DEBUG 
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
