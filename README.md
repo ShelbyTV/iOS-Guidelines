@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a6
+# iOS Guidelines / v1.0-a7
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -56,7 +56,7 @@ All declarations should be in a private namespace within your class's **implemen
 Exceptions (e.g., declarations that are allowed in the class's public/protected interface):
 
 1. Declarations that need to be used by other classes
-1. IBOutlets and IBAction
+1. IBOutlets and IBAction Methods
 1. Protocols
 
 ### Curly Braces, Parentheses, and Spacing
@@ -130,7 +130,7 @@ DLog(@"Syncing the Queue")
 ### UIViewController Subclass Boilerplate
 Look inside the **Sample View Controller/** folder for a template
 
-### SIngleton Boilerplate
+### Singleton Boilerplate
 Look inside the **Sample Singleton/** folder for a template
 
 ### Pre-Compiler Header Boilerplate
