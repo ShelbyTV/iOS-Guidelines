@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a4
+# iOS Guidelines / v1.0-a5
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -86,14 +86,14 @@ if ( conditionA ) {
 - (void)myInstanceMethod
 {
 
-	// My Declarations 
+	// Code goes here 
 
 }
 
 + (void)myClassMethods
 {
 
-	// My Declarations 
+	// Code goes here 
 	
 }
 </pre>
@@ -216,3 +216,32 @@ typedef NS_ENUM(NSUInteger, APIRequestType)
     APIRequestType_GetRollFrames   
 };
 </pre>
+
+## Github
+### Branches
+#### Minimum of n+1 branches
+At any point in time, there will always be at the very least, n+1 branches, where **n** = number of developers. There is the **master** branch, and a personal-master branch for each developer, named after that person.
+
+For example, if n = 3, we'll have 4 branches:
+
+- master
+- arthur-master 
+- keren-master
+- dan-master
+
+Each developer should always work on their personal-master branch.
+
+#### > n+1 branches
+If a new feature is being developed, and the developer doesn't feel comfortable working on their personal branch, they should create a new branch. The branch's name should simply be the name of the feature. 
+
+#### Committing
+Commit code often.
+
+### Merging
+
+- Make sure your personal branch is merged with the lastest **master** commit before starting work each morning.
+- Before merging your personal-master branch to **master**, do the following, make sure they're at the latest master branch.
+	
+### Tagging
+- Tag all releases pushed to TestFlight/Hockey/Enterprise with the version number (e.g., 1.0-a20)
+- Make sure to push the tags to origin (e.g., **git push --tags**)
