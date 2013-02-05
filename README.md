@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a2
+# iOS Guidelines / v1.0-a3
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -96,7 +96,7 @@ if ( conditionA ) {
 	// My Declarations 
 	
 }
-- </pre>
+</pre>
 
 ### Commenting
 All code should be self-documented, which means that there should be very few **//** in the source code. The bext example of this in Objective-C are detailed, *CamelCased* selectors 
