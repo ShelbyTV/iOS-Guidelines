@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a3
+# iOS Guidelines / v1.0-a4
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -18,8 +18,8 @@ Cocoa-Touch heavily follows the MVC paradigm. Therefore, it is best to organize 
 	- All other Objective-C Extensions 	
 - Constants
 	- Constants.h
-		- **#import**s all other constants and structure files. 
-		- For example, constants.h file should import constants files called:
+		- #import all other constants and structure files. 
+		- For example, Constants.h file should import constants files called:
 			- APIRoutes.h - Contains all API Routes used
 			- ColorConstants.h - Containts all colors
 - Supporting Files
@@ -27,11 +27,11 @@ Cocoa-Touch heavily follows the MVC paradigm. Therefore, it is best to organize 
 	- I18n files
 	- Default and Icon PNGs
 - External Libraries: All third-party libraries
-- Assetts: Image assets and fonts
+- Assets: Image assets and fonts
 </pre>
 
 ### Versioning
-#### SemVar
+#### SemVer
 We utilize the [Semantic Versioning System](http://www.semver.org). Visually, the semantic versioning system is: X.Y.Z (e.g., version 1.2.5). A short summary is provided below:
 
 - Major Changes (**X**.y.z)
@@ -115,15 +115,9 @@ In 99% of situations, you should only have **1 return statement** in your non-vo
 ### #pragma - Section Splitter
 Make use of **#pragma**s to split up groups of methods. Example in the next section.
 
-### UIViewController Subclass Boilerplate
-This should serve as a template for all **UIViewController** classes. Look inside the **Sample View Controller/** folder for a template
-
-### Pre-Compiler Header Boilerplate
-The pre-compiler header should contain all of your global import files. Look inside the **Sample Pre-Compiler/** folder for a template.
-
-### DLog and NSLog
+### DLog, not NSLog
 - DLog is an NSLog macro that display the file-name and line number of your NSLog statement in the console.
-- DLog is included in the Pre-Compiler Boilerplaye
+- DLog is included in the Pre-Compiler Boilerplate
 - **Always, always, always use DLog!**
 <pre>
 NSLog(@"Syncing the Queue") 
@@ -132,6 +126,15 @@ NSLog(@"Syncing the Queue")
 DLog(@"Syncing the Queue") 
 // output: [CoreDataUtility syncQueueRoll:] [Line 600] Syncing the Queue
 </pre>
+
+### UIViewController Subclass Boilerplate
+Look inside the **Sample View Controller/** folder for a template
+
+### SIngleton Boilerplate
+Look inside the **Sample Singleton/** folder for a template
+
+### Pre-Compiler Header Boilerplate
+The pre-compiler header should contain all of your global import files. Look inside the **Sample Pre-Compiler/** folder for a template.
 
 ## Modern Objective-C
 We are making use of modern Objective-C syntax that was introduced in [WWDC 2012 - Session 405](https://developer.apple.com/videos/wwdc/2012/?id=405). A summary of the changes can be found below:
@@ -203,7 +206,7 @@ NSNumber *noNumber = @NO;             // equivalent to [NSNumber numberWithBool:
 </pre>
 ### typedef in Objective-C 
 
-In iOS 6, **typedef enum** declarations were given an Objective-C makeover. Below is an example on how to declare a zero-indexed **enum**, APIRequestType, with 4 values.
+In iOS 6, **typedef enum** declarations were given an Objective-C makeover. Below is an example on how to declare a zero-indexed **enum**, APIRequestType, with 3 values.
 
 <pre>
 typedef NS_ENUM(NSUInteger, APIRequestType)
