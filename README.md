@@ -64,7 +64,6 @@ Pay attention to the positioning and placement of braces, parentheses, and to th
 
 - Conditionals
 <pre>
-
 if ( conditionA ) {
 
 	// If conditionA is true, do something.
@@ -78,7 +77,6 @@ if ( conditionA ) {
 	// If conditionA and conditionB are both false, do something crazy!
 
 }
-
 </pre>
 
 - Methods:
@@ -96,7 +94,6 @@ if ( conditionA ) {
 	// My Declarations 
 	
 }
-
 </pre>
 
 ### Commenting
