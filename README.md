@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a5
+# iOS Guidelines / v1.0-a6
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -220,7 +220,8 @@ typedef NS_ENUM(NSUInteger, APIRequestType)
 ## Github
 ### Branches
 #### Minimum of n+1 branches
-At any point in time, there will always be at the very least, n+1 branches, where **n** = number of developers. There is the **master** branch, and a personal-master branch for each developer, named after that person.
+At any point in time, there will always be at the very least, n+1 branches, where **n** = number of developers. There is the **master** branch, and a personal-master branch for each developer, named after that person. 
+***Each developer should always work on their personal-master branch.***
 
 For example, if n = 3, we'll have 4 branches:
 
@@ -229,13 +230,14 @@ For example, if n = 3, we'll have 4 branches:
 - keren-master
 - dan-master
 
-Each developer should always work on their personal-master branch.
 
 #### > n+1 branches
-If a new feature is being developed, and the developer doesn't feel comfortable working on their personal branch, they should create a new branch. The branch's name should simply be the name of the feature. 
+- If a new feature is being developed, and the developer doesn't feel comfortable working on their personal-master branch, they should create a new branch. 
+- The branch's name should simply be the name of the feature. 
 
-#### Committing
-Commit code often.
+### Committing
+- Commit code frequnetly.
+- Make sure your commits are descriptive
 
 ### Merging
 
