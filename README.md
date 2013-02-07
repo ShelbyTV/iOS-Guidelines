@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a9
+# iOS Guidelines / v1.0-a10
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -62,7 +62,27 @@ Exceptions (e.g., declarations that are allowed in the class's public/protected 
 ### Curly Braces, Parentheses, and Spacing
 Pay attention to the positioning and placement of braces, parentheses, and to the spacing in the examples below:
 
-- Conditionals
+- Conditionals #1
+
+<pre>
+All non-ternary statements should have curly-braces around them
+
+// Incorrect 
+if ( conditionA ) [self doSomething];
+
+// Incorrect
+if ( conditionA )
+	[self doSomething];
+	
+// Correct
+if ( conditionA ) {
+
+	[self doSomething];
+
+}
+</pre>
+
+- Conditionals #2
 
 <pre>
 if ( conditionA ) {
@@ -79,6 +99,7 @@ if ( conditionA ) {
 
 }
 </pre>
+
 
 - Methods:
 
@@ -219,36 +240,27 @@ typedef NS_ENUM(NSUInteger, APIRequestType)
 
 ## Git and Github
 ### Branches
-#### Minimum of n+1 branches
-At any point in time, there will always be at the very least, n+1 branches, where **n** = number of developers. There is the **master** branch, and a personal-master branch for each developer, named after that person. 
-***Each developer should always work on their personal-master branch.***
-
-For example, if n = 3, we'll have 4 branches:
-
-- master
-- arthur-master 
-- keren-master
-- dan-master
-
-
-#### > n+1 branches
-- If a new feature is being developed, and the developer doesn't feel comfortable working on their personal-master branch, they should create a new branch. 
+- There is only one master branch.
+- Each new feature gets their own branch
 - The branch's name should simply be the name of the feature. 
+- Make sure to merge your working branch with master occassionally
+- When your feature is completed and smoke-tested, make sure to merge your branch with master, and delete your branch
 
 ### Committing
 - Commit code frequnetly.
+- Make sure to always push your commits to Github
+	- Example: **git push origin myBranch**
 - Make sure your commits are descriptive
 - If addressing an issue in Github, make sure to reference the issue number with a hash/pound-sign to the commit, including the hash as that creates a reference to the issue in the commit
 	- Example: **Addressed #101 - Added new API routes** 
-
-### Merging
-
-- Make sure your personal branch is merged with the lastest **master** commit before starting work each morning.
-- Before merging your personal-master branch to **master**, do the following, make sure they're at the latest master branch.
 	
 ### Tagging
 - Tag all releases pushed to TestFlight/Hockey/Enterprise with the version number (e.g., 2.0-a20)
 - Make sure to push the tags to origin (e.g., **git push --tags**)
+
+### Pulling and Merging
+- Make sure to pull the latest commits before starting work every morning.
+- If master has changed, make sure to merge with master
 
 ### Github Labels, Assignments and Milestone
 Before finishing the creation of a new issue, make sure to: 
