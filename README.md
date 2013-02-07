@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a8
+# iOS Guidelines / v1.0-a9
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -113,7 +113,7 @@ When declaring an NSString property, always use the **copy** keyword.
 In 99% of situations, you should only have **1 return statement** in your non-void method.
 
 ### #pragma - Section Splitter
-Make use of **#pragma**s to split up groups of methods. Example in the next section.
+Make use of **#pragma**s to split up groups of methods.
 
 ### DLog, not NSLog
 - DLog is an NSLog macro that display the file-name and line number of your NSLog statement in the console.
@@ -162,7 +162,7 @@ We are making use of modern Objective-C syntax that was introduced in [WWDC 2012
 **@property** declarations now declare the iVars and auto-synthesize your variables for you.
 
 - Explicit declaration of iVars is deprecated.
-- Explicit declaration of **@synthesis var = _var** is unncessary.
+- Explicit declaration of **@synthesize var = _var** is unncessary.
 
 ### NSArray & NSMutableArray Literals
 <pre>
@@ -191,18 +191,18 @@ NSMutableDictionary *aMutableDictionary = @{aDictionary mutableCopy} // = +[NSMu
 ### NSNumber Literals
 <pre>
 // Integral literals
-NSNumber *fortyTwo = @42;             // equivalent to [NSNumber numberWithInt:42]
-NSNumber *fortyTwoUnsigned = @42u;    // equivalent to [NSNumber numberWithUnsignedInt:42u]
-NSNumber *fortyTwoLong = @42l;        // equivalent to [NSNumber numberWithLong:42l]
-NSNumber *fortyTwoLongLong = @42ll;   // equivalent to [NSNumber numberWithLongLong:42ll]
+NSNumber *fortyTwo = @42;             // = [NSNumber numberWithInt:42]
+NSNumber *fortyTwoUnsigned = @42u;    // = [NSNumber numberWithUnsignedInt:42u]
+NSNumber *fortyTwoLong = @42l;        // = [NSNumber numberWithLong:42l]
+NSNumber *fortyTwoLongLong = @42ll;   // = [NSNumber numberWithLongLong:42ll]
 
 // Floating point literals
-NSNumber *piFloat = @3.141592654f;    // equivalent to [NSNumber numberWithFloat:3.141592654f]
-NSNumber *piDouble = @3.1415926535;   // equivalent to [NSNumber numberWithDouble:3.1415926535]
+NSNumber *piFloat = @3.141592654f;    // = [NSNumber numberWithFloat:3.141592654f]
+NSNumber *piDouble = @3.1415926535;   // = [NSNumber numberWithDouble:3.1415926535]
 
 // Boolean literals
-NSNumber *yesNumber = @YES;           // equivalent to [NSNumber numberWithBool:YES]
-NSNumber *noNumber = @NO;             // equivalent to [NSNumber numberWithBool:NO]
+NSNumber *yesNumber = @YES;           // = [NSNumber numberWithBool:YES]
+NSNumber *noNumber = @NO;             // = [NSNumber numberWithBool:NO]
 </pre>
 ### typedef in Objective-C 
 
@@ -238,7 +238,7 @@ For example, if n = 3, we'll have 4 branches:
 ### Committing
 - Commit code frequnetly.
 - Make sure your commits are descriptive
-- If addressing an issue in Github, make sure to reference the issue number with a hash/pound-sign to the commit, including the hash
+- If addressing an issue in Github, make sure to reference the issue number with a hash/pound-sign to the commit, including the hash as that creates a reference to the issue in the commit
 	- Example: **Addressed #101 - Added new API routes** 
 
 ### Merging
@@ -247,7 +247,7 @@ For example, if n = 3, we'll have 4 branches:
 - Before merging your personal-master branch to **master**, do the following, make sure they're at the latest master branch.
 	
 ### Tagging
-- Tag all releases pushed to TestFlight/Hockey/Enterprise with the version number (e.g., 1.0-a20)
+- Tag all releases pushed to TestFlight/Hockey/Enterprise with the version number (e.g., 2.0-a20)
 - Make sure to push the tags to origin (e.g., **git push --tags**)
 
 ### Github Labels, Assignments and Milestone
@@ -255,4 +255,5 @@ Before finishing the creation of a new issue, make sure to:
 
 - Label each issue properly
 - Assign a developer to address the issue
+	- If you're assigning yourself, make sure not to forget that you're working on that issue 
 - Add a milestone, if one exists.
