@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a7
+# iOS Guidelines / v1.0-a8
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -13,7 +13,7 @@ Cocoa-Touch heavily follows the MVC paradigm. Therefore, it is best to organize 
 - ViewControllers: All UIViewController subclasses 
 - Categories
 	- UIColor+ColorWithHexAndAlpha
-		- Converts Hex Color code to RGB and returns a UIColor objecy
+		- Converts Hex Color code to RGB and returns a UIColor object
 		- Downlaod: https://github.com/ArtSabintsev/UIColor-ColorWithHexAndAlpha
 	- All other Objective-C Extensions 	
 - Constants
@@ -217,7 +217,7 @@ typedef NS_ENUM(NSUInteger, APIRequestType)
 };
 </pre>
 
-## Github
+## Git and Github
 ### Branches
 #### Minimum of n+1 branches
 At any point in time, there will always be at the very least, n+1 branches, where **n** = number of developers. There is the **master** branch, and a personal-master branch for each developer, named after that person. 
@@ -238,6 +238,8 @@ For example, if n = 3, we'll have 4 branches:
 ### Committing
 - Commit code frequnetly.
 - Make sure your commits are descriptive
+- If addressing an issue in Github, make sure to reference the issue number with a hash/pound-sign to the commit, including the hash
+	- Example: **Addressed #101 - Added new API routes** 
 
 ### Merging
 
@@ -247,3 +249,10 @@ For example, if n = 3, we'll have 4 branches:
 ### Tagging
 - Tag all releases pushed to TestFlight/Hockey/Enterprise with the version number (e.g., 1.0-a20)
 - Make sure to push the tags to origin (e.g., **git push --tags**)
+
+### Github Labels, Assignments and Milestone
+Before finishing the creation of a new issue, make sure to: 
+
+- Label each issue properly
+- Assign a developer to address the issue
+- Add a milestone, if one exists.
