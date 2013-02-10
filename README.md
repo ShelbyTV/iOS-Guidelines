@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a10
+# iOS Guidelines / v1.0-a11
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -59,7 +59,10 @@ Exceptions (e.g., declarations that are allowed in the class's public/protected 
 1. IBOutlets and IBAction Methods
 1. Protocols
 
-### Curly Braces, Parentheses, and Spacing
+### BOOLean Flags
+Avoid them whenever possible.
+
+### Braces, Parentheses, and Spacing
 Pay attention to the positioning and placement of braces, parentheses, and to the spacing in the examples below:
 
 - Conditionals #1
@@ -124,18 +127,6 @@ All code should be self-documented, which means that there should be very few **
 
 - e.g., **tableView:didSelectRowAtIndexPath:**	
 
-### IBAction and Void
-All **IBAction** methods have a return-type of **void**. Fore the sake of readability in the implementation file of your class, keep your return-type for your action methods as **IBAction**. 
-
-### NSStrings
-When declaring an NSString property, always use the **copy** keyword.
-
-### return statement
-In 99% of situations, you should only have **1 return statement** in your non-void method.
-
-### #pragma - Section Splitter
-Make use of **#pragma**s to split up groups of methods.
-
 ### DLog, not NSLog
 - DLog is an NSLog macro that display the file-name and line number of your NSLog statement in the console.
 - DLog is included in the Pre-Compiler Boilerplate
@@ -148,6 +139,20 @@ DLog(@"Syncing the Queue")
 // output: [CoreDataUtility syncQueueRoll:] [Line 600] Syncing the Queue
 </pre>
 
+### IBAction and Void
+All **IBAction** methods have a return-type of **void**. Fore the sake of readability in the implementation file of your class, keep your return-type for your action methods as **IBAction**. 
+
+### NSStrings
+When declaring an NSString property, always use the **copy** keyword.
+
+### #pragma - Section Splitter
+Make use of **#pragma**s to split up groups of methods.
+
+### return statement
+In 99% of situations, you should only have **1 return statement** in your non-void method.
+
+## Templates
+
 ### UIViewController Subclass Boilerplate
 Look inside the **Sample View Controller/** folder for a template
 
@@ -157,7 +162,7 @@ Look inside the **Sample Singleton/** folder for a template
 ### Pre-Compiler Header Boilerplate
 The pre-compiler header should contain all of your global import files. Look inside the **Sample Pre-Compiler/** folder for a template.
 
-## Modern Objective-C
+## Modern Objective-C (iOS 6+)
 We are making use of modern Objective-C syntax that was introduced in [WWDC 2012 - Session 405](https://developer.apple.com/videos/wwdc/2012/?id=405). A summary of the changes can be found below:
 
 ### @property, auto-synthesis & iVars
@@ -256,7 +261,12 @@ typedef NS_ENUM(NSUInteger, APIRequestType)
 	
 ### Tagging
 - Tag all releases pushed to TestFlight/Hockey/Enterprise with the version number (e.g., 2.0-a20)
-- Make sure to push the tags to origin (e.g., **git push --tags**)
+- Creating a tag
+	- Locally: **git tag tagName**
+	- Make sure to push it remotely: **git push --tags**
+- Deleting a tag:
+	- Locally: **git tag -d tagName**
+	- Remotely: **git push origin :refs/tags/tagName**
 
 ### Pulling and Merging
 - Make sure to pull the latest commits before starting work every morning.
