@@ -1,4 +1,4 @@
-# iOS Guidelines / v1.0-a11
+# iOS Guidelines / v1.0
 
 ## About
 This document should serve as a guideline on how to structure an Xcode Project and write clean/readable Objective-C code for all current and future Cocoa-Touch Shelby projects.
@@ -14,7 +14,7 @@ Cocoa-Touch heavily follows the MVC paradigm. Therefore, it is best to organize 
 - Categories
 	- UIColor+ColorWithHexAndAlpha
 		- Converts Hex Color code to RGB and returns a UIColor object
-		- Downlaod: https://github.com/ArtSabintsev/UIColor-ColorWithHexAndAlpha
+		- Download: https://github.com/ArtSabintsev/UIColor-ColorWithHexAndAlpha
 	- All other Objective-C Extensions 	
 - Constants
 	- Constants.h
@@ -56,11 +56,7 @@ All declarations should be in a private namespace within your class's **implemen
 Exceptions (e.g., declarations that are allowed in the class's public/protected interface):
 
 1. Declarations that need to be used by other classes
-1. IBOutlets and IBAction Methods
 1. Protocols
-
-### BOOLean Flags
-Avoid them whenever possible.
 
 ### Braces, Parentheses, and Spacing
 Pay attention to the positioning and placement of braces, parentheses, and to the spacing in the examples below:
