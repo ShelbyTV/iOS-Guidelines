@@ -122,6 +122,15 @@ if ( conditionA ) {
 }
 </pre>
 
+### Fast Enumeration
+Use fast enumeration in loops as it is more concise and efficient. Keep in mind, that you can't modify the array while in loop
+
+<pre>
+for (NSString *someString in array) {
+    // do something
+}
+</pre>
+
 ### Commenting
 All code should be self-documented, which means that there should be very few **//** in the source code. The bext example of this in Objective-C are detailed, *CamelCased* selectors 
 
