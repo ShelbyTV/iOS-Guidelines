@@ -246,9 +246,9 @@ In iOS 6, **typedef enum** declarations were given an Objective-C makeover. Belo
 <pre>
 typedef NS_ENUM(NSUInteger, APIRequestType)
 {
-    APIRequestType_PostUserAuthorization,
-    APIRequestType_GetStream,
-    APIRequestType_GetRollFrames   
+    APIRequestTypePostUserAuthorization,
+    APIRequestTypeGetStream,
+    APIRequestTypeGetRollFrames   
 };
 </pre>
 
