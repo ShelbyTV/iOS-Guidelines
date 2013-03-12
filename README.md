@@ -252,6 +252,56 @@ typedef NS_ENUM(NSUInteger, APIRequestType)
 };
 </pre>
 
+## Error Checks
+- Never assume an object what you think it is. (Especially when the object comes back from network or coredata.
+- Always add error checks and especially when the operation might cause a crash if there is an error. For example:
+	- NSArray: 
+		- Check for type
+		- Check for size
+		<pre>
+		NSArray *someArray = ....
+		if ([someArray isKindOfClass[NSArray class]] && [someArray count] > index) {
+				Object *someObject = someArray[index];
+				...
+		}
+		</pre>
+	- NSDictionary:
+		- Check for type
+		- Make sure key and value are not nil
+		<pre>
+		NSDictionary *someDictionary = ....
+		if ([someDictionary isKindOfClass:[NSDictionary class]] && key && value) {
+				someDictionary[key] = value;
+		}
+	- NSManagedObjectContext - check for nil before calling certain methods:
+		<pre>
+		if (objectID) {
+				Object *somebject = [context existingObjectWithID:objectID error:nil]
+				....
+		}
+		</pre>
+
+	- For readability & error check, don't chain calls:
+	<pre>
+	// Instead of this:
+	NSArray *resultsArray = [resultsDictionary[@"result"] valueForKey:@"frames"];
+	</pre>
+	<pre>
+	// Do this:
+	if ([resultsDictionary isKindOfClass:[NSDictionary class]]) {
+			NSDictionary *result = resultsDictionary[@"result"];
+			if ([result isKindOfClass:[NSDictionary class]]) {
+				NSArray *frames = result[@"frames"];
+				if ([frames isKindOfClass:[NSArray class]]) {
+					for (Frame *frame in frames) {
+						// Do something
+					}
+				}
+			}
+		}
+	</pre>
+
+
 ## Git and Github
 ### Branches
 - There is only one master branch.
