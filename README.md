@@ -171,6 +171,9 @@ Look inside the **Sample Singleton/** folder for a template
 ### Pre-Compiler Header Boilerplate
 The pre-compiler header should contain all of your global import files. Look inside the **Sample Pre-Compiler/** folder for a template.
 
+## init Methods
+- There should be no usage of the dot notation in init methods. As calling the dot notation will call the accessors methods and that might cause side effects
+
 ## Modern Objective-C (iOS 6+)
 We are making use of modern Objective-C syntax that was introduced in [WWDC 2012 - Session 405](https://developer.apple.com/videos/wwdc/2012/?id=405). A summary of the changes can be found below:
 
